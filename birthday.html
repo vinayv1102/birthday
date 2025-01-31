@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Guess Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        #word-container {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+        input {
+            font-size: 18px;
+            padding: 5px;
+        }
+        button {
+            font-size: 18px;
+            padding: 8px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Guess the Word</h1>
+    <p id="clue"></p>
+    <div id="word-container"></div>
+    <input type="text" id="guess" placeholder="Enter your guess">
+    <button onclick="checkGuess()">Submit</button>
+    
+    <script>
+        const words = [
+            { clue: "A yellow fruit", word: "banana" },
+            { clue: "A large body of water", word: "ocean" },
+            { clue: "The color of the sky", word: "blue" }
+        ];
+        
+        let currentWordIndex = 0;
+
+        function displayWord() {
+            if (currentWordIndex >= words.length) {
+                document.body.innerHTML = "<h1>Congratulations! You guessed all words!</h1>";
+                return;
+            }
+            
+            const { clue, word } = words[currentWordIndex];
+            document.getElementById("clue").innerText = "Clue: " + clue;
+            document.getElementById("word-container").innerText = "_ ".repeat(word.length).trim();
+            document.getElementById("guess").value = "";
+        }
+        
+        function checkGuess() {
+            const userGuess = document.getElementById("guess").value.toLowerCase();
+            if (userGuess === words[currentWordIndex].word) {
+                currentWordIndex++;
+                displayWord();
+            } else {
+                alert("Wrong! Try again.");
+            }
+        }
+        
+        displayWord();
+    </script>
+</body>
+</html>

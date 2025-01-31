@@ -1,0 +1,1 @@
+Simple website used to guess the correct word and continue to next word using clues
