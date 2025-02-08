@@ -194,7 +194,7 @@
             }
             
             const { clue, word } = words[currentWordIndex];
-            document.getElementById("clue").innerText = "Clue: " + clue;
+            document.getElementById("clue").innerText = clue;
             document.getElementById("word-container").innerText = "_ ".repeat(word.length).trim();
             document.getElementById("guess").value = "";
             document.getElementById("guess").focus();
