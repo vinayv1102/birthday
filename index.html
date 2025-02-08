@@ -81,6 +81,8 @@
     <div id="start-container">
         <h1>💕 For the Eyes I Always Get Lost In 💕</h1>
         <p>Happy birthday, Bubu! Words alone can't capture what you and our memories mean to me. So, let's play a little game and revisit the places where we've made our most treasured memories. 💖</p>
+        <p>Here's how it works, I give you a clue, you enter what place I am talking about. We re going to be doing a lot of travelling 😊</p>
+        <p>ARE YOU READY?</p>
         <button class="heart-button" onclick="startGame()">❤️</button>
     </div>
     
@@ -88,16 +90,93 @@
         <h1>🎉 Guess the Word! 🎉</h1>
         <p id="clue"></p>
         <div id="word-container"></div>
-        <input type="text" id="guess" placeholder="Enter your guess" autofocus>
+        <input type="text" id="guess" placeholder="What is your answer dummy?" autofocus>
         <button class="heart-button" onclick="checkGuess()">✔</button>
     </div>
     <div id="popup" class="popup"></div>
     
     <script>
         const words = [
-            { clue: "🍌 A yellow fruit", word: "banana" },
-            { clue: "🌊 A large body of water", word: "ocean" },
-            { clue: "🌈 The color of the sky", word: "blue" }
+{ clue: 
+`👑 I carry a princess with pride,
+💨 She sits and chills while I ride.
+🛣️ On roads I roll, both near and far,
+🔑 Turned on everyday—what am I?`, 
+                word: "car" },
+{ clue: 
+`🍹 Where the waitress calls you by name,
+🔥 And Kamikaze shots fuel the game.
+🎶 Laughter and music fill the air,
+🍻 A place for fun—pull up a chair.`, word: "HOC" },
+{ clue: 
+`❤️ A place where I confessed my heart,
+🥃 Where I was lost in liquor but found my truth.
+🎶 Laughter, memories, and fate intertwined,
+🍻 A moment that changed both your life and mine.`, word: "1131" },
+{ clue: 
+`😏 I tell my parents I'm at work,
+🙏 But I sit where the yogis lurk.
+💑 With my love, I steal some time,
+📶 A peaceful escape, serene and divine`, word: "Yogisthaan" },
+{ clue: 
+`🥭 A place where we cheered with mango beer,
+🍺 Golden and smooth, bringing us cheer.
+🎂 We celebrated my special day,
+🎉 With fun and laughter all the way`, word: "Brooks and Bonds" },
+{ clue: 
+`👩‍❤️‍💋‍👨 The place we FIRST went, just us two,
+🎨 It says "art", but there's none to do.
+🍽️ We laughed, we talked, the night felt right,
+💖 A memory made on that special night.`, word: "DYU Art Cafe" },
+{ clue: 
+`☕ A café with WiFi that comes and goes,
+🛏️ The only one where a bed it shows.
+😏 Its name rhymes with a word you love to blow,
+🎉 A spot of comfort, joy, and glow.`, word: "Happiness Cafe" },
+{ clue: 
+`🍗 A place we visit for "wings" so nice,
+🍻 Where beer is half the usual price.
+🛣️ Twice the distance from your home,
+🏙️ Yet we go, no matter where we roam.`, word: "Plan B Jayanagar" },
+{ clue: 
+`🚇 The metro that takes you home on those days,
+🕔 At 5 on the dot, you came my way.
+⏳ Two hours to travel, just two to stay,
+💖 But every moment was cherished anyway.`, word: "RV Metro Station" },
+{ clue: 
+`🔥 From the ashes, I rise so tall,
+🏙️ A place we’d go after work to stall.
+🛍️ With food, fun, and stores so wide,
+🎉 Our favorite spot, side by side.`, word: "Phoenix Mall" },
+{ clue: 
+`❤️ The place where I asked you to be mine,
+🍷 As we got drunk on cheap red wine.
+💸 Where drinks flowed without a cost too tall,
+🎉 A night to remember, I cherish it all.`, word: "Bobs Bar" },
+{ clue: 
+`📱 A place we check on Zomato for deals,
+👨‍🍳 Where a man insists on closing the meals.
+🎮 The spot where I win every board game,
+💻 Yet we still work, all the same.`, word: "Roastea" },
+{ clue: 
+`🎆 A place we met after the New Year's cheer,
+💓 Where your heart raced with sudden fear.
+🖥️ Photoshop edits with my brother in sight,
+🍝 Pastas were eaten to make things right.`, word: "Pasta Street" },
+{ clue: 
+`🍷 We drank too much, more than we’d say,
+❤️ Got kicked out for PDA that day.
+🎶 A place where dignity quietly slung,
+😂 And memories stick like air in lungs.`, word: "Chin Lungs" },
+{ clue: 
+`🌮 A place we go for tacos in stacks,
+🍚 No rice for her—she won’t look back.
+🔥 All she wants is Tabasco’s delight,
+🏨 Packed up before our HSR evenings.`, word: "California Burrito" },
+
+
+
+
         ];
         
         let currentWordIndex = 0;
@@ -110,7 +189,7 @@
 
         function displayWord() {
             if (currentWordIndex >= words.length) {
-                document.body.innerHTML = "<h1>🎉 Congratulations! You guessed all words! 🎉</h1>";
+                document.body.innerHTML = "<h1>🎉 Congratulations Smelli Girl! You guessed all words correctly! 🎉</h1>";
                 return;
             }
             
@@ -124,12 +203,12 @@
         function checkGuess() {
             const userGuess = document.getElementById("guess").value.toLowerCase();
             if (userGuess === words[currentWordIndex].word) {
-                showPopup("✅ Correct! Moving to the next word...", () => {
+                showPopup("✅ Good job Detty Gorl! Moving to the next place of interest ❤️...", () => {
                     currentWordIndex++;
                     displayWord();
                 });
             } else {
-                showPopup("❌ Wrong! Try again.");
+                showPopup("❌❌❌ HAHAHA DUMMBO!!! Guess again smelli ❌❌❌");
             }
         }
         
