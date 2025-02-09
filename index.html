@@ -40,7 +40,7 @@
             border: none;
             border-radius: 5px;
             text-align: center;
-            width: 90%;
+            width: 95%;
             outline: none;
         }
         .heart-button {
@@ -87,7 +87,7 @@
     </div>
     
     <div id="game-container" style="display: none;">
-        <h1>🎉 Guess the Word! 🎉</h1>
+        <h2>🎉 Guess the Word! 🎉</h2>
         <p id="clue"></p>
         <div id="word-container"></div>
         <input type="text" id="guess" placeholder="What is your answer dummy?" autofocus>
@@ -101,8 +101,17 @@
 `👑 I carry a princess with pride,
 💨 She sits and chills while I ride.
 🛣️ On roads I roll, both near and far,
-🔑 Turned on everyday—what am I?`, 
-                word: "car" },
+🔑 Turned on everyday—what am I?`,  word: "car" },
+{ clue: 
+`🔥 From the ashes, I rise so tall,
+🏙️ A place we’d go after work to stall.
+🛍️ With food, fun, and stores so wide,
+🎉 Our favorite spot, side by side.`, word: "Phoenix Mall" },
+{ clue: 
+`😏 I tell my parents I'm at work,
+🙏 But I sit where the yogis lurk.
+💑 With my love, I steal some time,
+📶 A peaceful escape, serene and divine`, word: "Yogisthaan" },
 { clue: 
 `🍹 Where the waitress calls you by name,
 🔥 And Kamikaze shots fuel the game.
@@ -114,10 +123,10 @@
 🎶 Laughter, memories, and fate intertwined,
 🍻 A moment that changed both your life and mine.`, word: "1131" },
 { clue: 
-`😏 I tell my parents I'm at work,
-🙏 But I sit where the yogis lurk.
-💑 With my love, I steal some time,
-📶 A peaceful escape, serene and divine`, word: "Yogisthaan" },
+`❤️ The place where I asked you to be mine,
+🍷 As we got drunk on cheap red wine.
+💸 Where drinks flowed without a cost too tall,
+🎉 A night to remember, I cherish it all.`, word: "Bobs Bar" },
 { clue: 
 `🥭 A place where we cheered with mango beer,
 🍺 Golden and smooth, bringing us cheer.
@@ -134,26 +143,6 @@
 😏 Its name rhymes with a word you love to blow,
 🎉 A spot of comfort, joy, and glow.`, word: "Happiness Cafe" },
 { clue: 
-`🍗 A place we visit for "wings" so nice,
-🍻 Where beer is half the usual price.
-🛣️ Twice the distance from your home,
-🏙️ Yet we go, no matter where we roam.`, word: "Plan B Jayanagar" },
-{ clue: 
-`🚇 The metro that takes you home on those days,
-🕔 At 5 on the dot, you came my way.
-⏳ Two hours to travel, just two to stay,
-💖 But every moment was cherished anyway.`, word: "RV Metro Station" },
-{ clue: 
-`🔥 From the ashes, I rise so tall,
-🏙️ A place we’d go after work to stall.
-🛍️ With food, fun, and stores so wide,
-🎉 Our favorite spot, side by side.`, word: "Phoenix Mall" },
-{ clue: 
-`❤️ The place where I asked you to be mine,
-🍷 As we got drunk on cheap red wine.
-💸 Where drinks flowed without a cost too tall,
-🎉 A night to remember, I cherish it all.`, word: "Bobs Bar" },
-{ clue: 
 `📱 A place we check on Zomato for deals,
 👨‍🍳 Where a man insists on closing the meals.
 🎮 The spot where I win every board game,
@@ -164,19 +153,25 @@
 🖥️ Photoshop edits with my brother in sight,
 🍝 Pastas were eaten to make things right.`, word: "Pasta Street" },
 { clue: 
-`🍷 We drank too much, more than we’d say,
-❤️ Got kicked out for PDA that day.
-🎶 A place where dignity quietly slung,
-😂 And memories stick like air in lungs.`, word: "Chin Lungs" },
-{ clue: 
 `🌮 A place we go for tacos in stacks,
-🍚 No rice for her—she won’t look back.
-🔥 All she wants is Tabasco’s delight,
+🍚 No rice for her—she won't look back.
+🔥 All she wants is Tabasco's delight,
 🏨 Packed up before our HSR evenings.`, word: "California Burrito" },
-
-
-
-
+{ clue: 
+`🍗 A place we visit for "wings" so nice,
+🍻 Where beer is half the usual price.
+🛣️ Twice the distance from your home,
+🏙️ Yet we go, no matter where we roam.`, word: "Plan B Jayanagar" },
+{ clue: 
+`🚇 The metro that takes you home on those days,
+🕔 At 5 on the dot, you came my way.
+⏳ Two hours to travel, just two to stay,
+💖 But every moment was cherished anyway.`, word: "RV Metro Station" },
+// { clue: 
+// `🍷 We drank too much, more than we'd say,
+// ❤️ Got kicked out for PDA that day.
+// 🎶 A place where dignity quietly slung,
+// 😂 And memories stick like air in lungs.`, word: "Chin Lungs" },
         ];
         
         let currentWordIndex = 0;
@@ -189,7 +184,15 @@
 
         function displayWord() {
             if (currentWordIndex >= words.length) {
-                document.body.innerHTML = "<h1>🎉 Congratulations Smelli Girl! You guessed all words correctly! 🎉</h1>";
+                document.body.innerHTML = `<h1>🎉 Congratulations Smelli Girl! You guessed all words correctly! 🎉</h1>
+<h2>
+❤️❤️❤️
+You are the most important person in my life.
+I cannot fathom going through this journey called life,
+without you by my side.
+It will not be called Living, if it is not with you.
+I cant wait to spend the rest of my life with you
+❤️❤️❤️</h2>`;
                 return;
             }
             
