@@ -35,8 +35,8 @@
             margin-bottom: 20px;
         }
         input {
-            font-size: 24px;
-            padding: 15px;
+            font-size: 20px;
+            padding: 10px;
             border: none;
             border-radius: 5px;
             text-align: center;
@@ -203,12 +203,19 @@
         function checkGuess() {
             const userGuess = document.getElementById("guess").value.toLowerCase();
             if (userGuess === words[currentWordIndex].word) {
-                showPopup("✅ Good job Detty Gorl! Moving to the next place of interest ❤️...", () => {
+                showPopup(`✅✅✅ 
+Good job Detty Gorl! 
+Moving to the next place of interest 
+❤️❤️❤️`, () => {
                     currentWordIndex++;
                     displayWord();
                 });
             } else {
-                showPopup("❌❌❌ HAHAHA DUMMBO!!! Guess again smelli ❌❌❌");
+                showPopup(
+                    `❌❌❌ 
+HAHAHA DUMMBO!!! 
+GUESS AGAIN SMELLI 
+❌❌❌`);
             }
         }
         
